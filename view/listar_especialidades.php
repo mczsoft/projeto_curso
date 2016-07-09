@@ -1,8 +1,19 @@
 <?php
+include_once '../control/EspecialidadeControl.php';
+$especialidadecontrol = new EspecialidadeControl();
+?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<table>
+    <tr>
+        <td>ID</td>
+        <td>NOME</td>
+    </tr>
+<?php
+foreach ($especialidadecontrol->listarTodos() as $especialidade) {
+    ?>
+    <tr>
+        <td><?php echo $especialidade->id ?></td>
+        <td><?php echo $especialidade->nome?></td>
+    </tr>
+<?php } ?>
+</table>
