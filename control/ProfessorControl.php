@@ -1,23 +1,25 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of ProfessorControl
- *
- * @author PHP
- */
+include_once '../model/Professor.php';
 class ProfessorControl {
     public function inserir() {
+        $numero_contribuinte = $_POST['numero_contribuinte'];
+        $nome = $_POST['nome'];
+        $nascimento = $_POST['nascimento'];
+        $carga_horaria = $_POST['carga_horaria'];
         
+        $professor = new Professor();
+        
+        $professor->setNumero_contribuinte($numero_contribuinte);
+        $professor->setNome($nome);
+        $professor->setNascimento($nascimento);
+        $professor->setCarga_horaria($carga_horaria);
+        $professor->salvar();
     }
     
+    
     public function listarTodos () {
-        
+        $professor = new Professor();
+        return $professor->listarProfessores();
     }
     
     public function buscar ($id) {

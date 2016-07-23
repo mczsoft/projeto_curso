@@ -1,16 +1,5 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of professor
- *
- * @author PHP
- */
+include_once '../db/conexao.php';
 class Professor {
     private $id;
     private $numero_contribuinte;
@@ -67,5 +56,23 @@ class Professor {
         $this->especialidade_id = $especialidade_id;
     }
 
+    public function listarProfessores() {
+        $sql = 'SELECT * FROM professores';
+        $query = Conexao::prepare($sql);
+        $query->execute();        
+        return $query->fetchAll();
+    }
+    
+     public function salvar() {
+        $sql = 'INSERT INTO professores (numero_contribuinte, nome, nascimento, carga_horaria) VALUES (:numero_contribuinte, :nome, :nascimento, :carga_horaria)';
+        
+        $query = Conexao::prepare($sql);
+        $query->bindValue(":numero_contribuinte", $this->getNumero_contribuinte());
+        $query->bindValue(":nome", $this->getNome());
+        $query->bindValue(":nascimento", $this->getNascimento());
+        $query->bindValue(":carga_horaria", $this->getCarga_horaria());
+        $query->execute();
+
+    }
 
 }
