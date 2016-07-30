@@ -17,13 +17,23 @@ class EspecialidadeControl {
     }
     
     public function buscar ($id) {
-        
+        $especialidade = new Especialidade();
+        $ResultadoDaBusca = $especialidade->buscar($id);
+        return $ResultadoDaBusca;
     }
     
-    public function editar ($id) {
+    public function editar () {
+        $especialidade = new Especialidade();
         
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+       
+        $especialidade->setNome($nome);
+        $especialidade->atualizar($id);
     }
-    public function deletar ($id) {
-        
+    public function deletar () {
+        $especialidade = new Especialidade();
+        $id = $_GET['id'];
+        $especialidade->deletar($id);
     }      
 }

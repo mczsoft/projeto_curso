@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Sistem de Faculdade</title>
+    <title>Sistema Faculdade</title>
 
     <link href="../style/css/bootstrap.css" rel="stylesheet">
 
@@ -22,7 +22,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Faculdade</a>
+        <a class="navbar-brand" href="#">Software Faculdade</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,10 +52,19 @@
       <ul class="nav navbar-nav navbar-right">
         <!--<li><a href="#">Link</a></li>-->
         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listas <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="listar_especialidades.php">Especialidades</a></li>
+            <li><a href="listar_professores.php">Professores</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">sair</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Especialidades</a></li>
-            <li><a href="#">Usuarios</a></li>
+            <li><a href="cadastrar_especialidades.php">Especialidades</a></li>
+            <li><a href="cadastrar_professores.php">Professores</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">sair</a></li>
           </ul>
